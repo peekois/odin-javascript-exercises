@@ -1,15 +1,10 @@
 const palindromes = function (input) {
-  let string = input.toLowerCase();
-  let array = Array.from(string);
-  let reverseArray = array.reverse();
-
-  if (reverseArray.toString() != array.toString()) {
-    return false;
-  }
-
-  if (reverseArray.toString() == array.toString()) {
-    return true;
-  }
+  var inputString = input
+    .toLowerCase()
+    .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '')
+    .replace(/\s/g, '');
+  var reverseString = inputString.split('').reverse().join('');
+  return inputString == reverseString ? true : false;
 };
 
 // Do not edit below this line
